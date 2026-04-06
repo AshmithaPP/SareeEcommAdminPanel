@@ -1,0 +1,266 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+}
+
+.contentGrid {
+  flex: 1;
+  display: flex;
+  padding: 2rem 0;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.hierarchyPanel {
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.panelTitleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.panelTitle {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--on-surface);
+}
+
+.addButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-container);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+
+.addButton:hover {
+  background-color: var(--primary);
+}
+
+.hierarchyBox {
+  flex: 1;
+  background-color: var(--surface-container-low);
+  border-radius: 12px;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.treeItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.treeHeader {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.expandIcon {
+  color: var(--primary-container);
+  margin-right: 0.5rem;
+}
+
+.level1Text {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nodeCount {
+  margin-left: auto;
+  font-family: var(--font-inter);
+  font-size: 10px;
+  background-color: var(--surface);
+  color: rgba(27, 28, 26, 0.4);
+  padding: 0.125rem 0.5rem;
+  border-radius: 99px;
+}
+
+.subTree {
+  margin-left: 1.5rem;
+  padding-top: 0.5rem;
+  border-left: 1px solid rgba(208, 197, 178, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expandIconSmall {
+  font-size: 1.125rem;
+  color: rgba(27, 28, 26, 0.4);
+  margin-right: 0.5rem;
+}
+
+.level2Text {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.subNodeCount {
+  margin-left: auto;
+  font-family: var(--font-inter);
+  font-size: 10px;
+  color: rgba(27, 28, 26, 0.4);
+  padding-right: 0.5rem;
+}
+
+.leaves {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(208, 197, 178, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.leaf {
+  font-size: 0.75rem;
+  color: rgba(27, 28, 26, 0.6);
+  padding: 0.25rem 0;
+  margin: 0;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.leaf:hover {
+  color: var(--primary-container);
+}
+
+.leafActive {
+  font-weight: 700;
+  color: var(--primary-container);
+}
+
+.inactiveNode {
+  opacity: 0.7;
+}
+
+.attributesPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.cardsGrid {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.excellenceBanner {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  background: linear-gradient(45deg, #755b00 0%, #c9a84c 100%);
+  margin-top: auto;
+}
+
+.bannerBackground {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+}
+
+.bannerBackground img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.bannerTitle {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.bannerSub {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.bannerButton {
+  margin-left: auto;
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  color: var(--primary);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.bannerButton:hover {
+  background-color: var(--surface-container-low);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 991px) {
+  .pageWrapper {
+    padding-left: 0;
+  }
+  .contentGrid {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .hierarchyPanel {
+    width: 100%;
+  }
+  .attributesPanel {
+    overflow: visible;
+  }
+  .cardsGrid {
+    overflow: visible;
+  }
+}

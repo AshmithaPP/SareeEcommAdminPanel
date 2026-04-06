@@ -1,0 +1,96 @@
+.card {
+  background-color: var(--surface-container-lowest);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid rgba(208, 197, 178, 0.1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--on-surface);
+}
+
+.icon {
+  color: rgba(27, 28, 26, 0.4);
+}
+
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background-color: var(--surface-container-high);
+  color: var(--on-surface);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tagSecondary {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.tagPrimary {
+  background-color: var(--primary-fixed);
+  color: var(--on-primary-fixed-variant);
+}
+
+.tagWithColor {
+  background-color: var(--surface-container-high);
+}
+
+.colorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.inputWrapper {
+  margin-top: auto;
+}
+
+.input {
+  width: 100%;
+  background-color: var(--surface-container-low);
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.input:focus {
+  background-color: var(--surface-container-high);
+  box-shadow: 0 0 0 1px var(--primary-container);
+}
+
+.input::placeholder {
+  color: rgba(27, 28, 26, 0.4);
+}

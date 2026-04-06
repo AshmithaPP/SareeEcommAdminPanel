@@ -1,0 +1,439 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #fbf9f6;
+}
+
+
+/* Redundant header styles removed (global header used) */
+
+.formCanvas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  min-height: 0; /* Important for nested overflow */
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Left Column: Independently scrollable */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: none; /* Hide standard Firefox scrollbar */
+}
+
+.leftColumn::-webkit-scrollbar {
+  display: none; /* Hide standard Chrome/Safari scrollbar */
+}
+
+/* Right Column: Independent layout, can scroll if needed */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 0;
+}
+
+.card {
+  background-color: var(--surface-container-lowest);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(208, 197, 178, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--on-surface);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.fullWidth {
+  grid-column: span 2;
+}
+
+.halfWidth {
+  grid-column: span 1;
+}
+
+.label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--on-surface-variant);
+  margin-bottom: 0.5rem;
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  background-color: var(--surface-container-low);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #1f2937;
+  transition: var(--transition-smooth);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--primary-container);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.textareaWrapper {
+  background-color: var(--surface-container-low);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  border-bottom: 1px solid var(--surface-container-high);
+  color: var(--on-surface-variant);
+}
+
+.toolbarIcon {
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.toolbarIcon:hover {
+  color: var(--primary-container);
+}
+
+.textarea {
+  background: transparent;
+  resize: none;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.statusBox {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.statusTitle {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0;
+}
+
+.statusSub {
+  font-size: 9px;
+  color: var(--on-surface-variant);
+  margin: 0.125rem 0 0 0;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: var(--surface-container-highest);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.toggleActive {
+  background-color: var(--primary-container);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+}
+
+.toggleActive .toggleThumb {
+  transform: translateX(20px);
+}
+
+.slugGroup {
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--surface-container-low);
+}
+
+.slugPrefix {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: var(--surface-container-high);
+  color: var(--on-surface-variant);
+  font-size: 10px;
+  border-right: 1px solid rgba(208, 197, 178, 0.1);
+}
+
+.slugInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #1f2937;
+}
+
+.slugInput:focus {
+  outline: none;
+}
+
+/* Imagery Column Styles */
+.cardHeaderAction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.limitLabel {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.15em;
+}
+
+.uploadZone {
+  border: 2px dashed rgba(208, 197, 178, 0.3);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgba(245, 243, 240, 0.2);
+  margin-bottom: 1rem;
+}
+
+.uploadIcon {
+  color: var(--on-surface-variant);
+  margin-bottom: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.uploadText {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #1f2c1a;
+  margin: 0;
+}
+
+.uploadSubtext {
+  font-size: 9px;
+  color: var(--on-surface-variant);
+  margin: 0.25rem 0 0 0;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.imageItem {
+  position: relative;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.imageItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageBadge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: var(--primary-container);
+  color: white;
+  padding: 2px;
+  border-radius: 2px;
+  display: flex;
+}
+
+.addImage {
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+  border: 1px solid rgba(208, 197, 178, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(245, 243, 240, 0.5);
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.addImage:hover {
+  background-color: var(--surface-container-low);
+}
+
+/* Variant Card & Table */
+.variantsCard {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--on-surface-variant);
+  text-align: left;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--surface-container-low);
+}
+
+.table td {
+  padding: 0.75rem 0;
+  font-size: 10px;
+  border-bottom: 1px solid rgba(245, 243, 240, 0.5);
+}
+
+.variantColor {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.colorCircle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.badgeGreen {
+  background-color: #f0fdf4;
+  color: #15803d;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.badgeRed {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.bold {
+  font-weight: 600;
+  color: #1f2c1a;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.deleteIcon {
+  color: rgba(208, 197, 178, 0.4);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.deleteIcon:hover {
+  color: var(--error);
+}
+
+.addVariant {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.625rem;
+  background: transparent;
+  border: 1px solid var(--primary-container);
+  color: var(--primary-container);
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.addVariant:hover {
+  background-color: rgba(201, 168, 76, 0.05);
+}
+
+/* Action Bar (Footer) */
+.actionBar {
+  display: flex;
+  justify-content: flex-end; /* Align Publish button to the right end */
+  align-items: center;
+  padding: 0.5rem 0; /* Reduced padding as per user's preference */
+  flex-shrink: 0;
+}
+
+.publishBtn {
+  width: auto;
+  padding: 0.75rem 3rem !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.2);
+}
