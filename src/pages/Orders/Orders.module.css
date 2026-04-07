@@ -1,5 +1,5 @@
 .container {
-  padding: 1.5rem 2rem;
+  padding: 0.5rem 2rem 1.5rem;
   background-color: var(--surface);
   min-height: calc(100vh - 120px);
 }
@@ -251,4 +251,125 @@
 
 .statLabelGrowth {
   color: var(--on-secondary-container);
+}
+
+/* --- Responsive Layout --- */
+
+/* Tablet & Large Mobile (up to 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0.5rem 1.5rem 1.5rem;
+  }
+
+  .tableWrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table th, .table td {
+    padding: 1rem 1.5rem;
+    min-width: 130px; /* Prevent column squashing on tablets */
+  }
+}
+
+/* Mobile Portrait & Small Tablets (up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 1rem 2rem;
+    min-height: auto;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .filterGroup {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.35rem;
+    /* Hide scrollbar but keep functionality */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .filterGroup::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filterBtn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.7rem;
+  }
+
+  .tableWrapper {
+    margin: 0 -1rem; /* Full width on mobile */
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table th, .table td {
+    padding: 1rem;
+    min-width: 120px; /* Ensure content doesn't squash */
+  }
+
+  .table th:first-child, .table td:first-child {
+    padding-left: 1rem;
+  }
+
+  .customerCell {
+    min-width: 180px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .pagination {
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .statsGrid {
+    margin-top: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .statCard {
+    padding: 1.25rem;
+  }
+
+  .statValue {
+    font-size: 1.25rem;
+  }
+}
+
+/* Very Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 1.75rem;
+  }
+
+  .filterBtn {
+    padding: 0.5rem 1rem;
+  }
+
+  .statLabel {
+    font-size: 9px;
+  }
+
+  .statValue {
+    font-size: 1.125rem;
+  }
 }

@@ -66,12 +66,6 @@ const Dashboard = () => {
   return (
     <div className={styles.dashboardContainer}>
 
-      {/* Header */}
-      <header className={styles.header}>
-        <h1 className={styles.title}>Curatorial Overview</h1>
-        <p className={styles.subtitle}>Managing the threads of heritage.</p>
-      </header>
-
       {/* Row 1: KPI Grid + Chart */}
       <div className={styles.topRow}>
 

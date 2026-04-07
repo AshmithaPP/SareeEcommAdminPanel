@@ -1,5 +1,5 @@
 .customerPageContent {
-  padding: 1rem 2.5rem;
+  padding: 0 2.5rem 1rem;
   background-color: #FAF8F5;
   height: 100%;
   display: flex;
@@ -29,44 +29,34 @@
 }
 
 /* Filter Bar */
-.filterBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+/* Filter Bar Override for Shared Component */
+.searchFilterOverride {
+  padding-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
 }
 
-.searchContainer {
-  position: relative;
-  flex: 1;
-  max-width: 500px;
+/* Ensure controls stack on mobile */
+@media (max-width: 768px) {
+  .searchFilterOverride {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 2rem !important;
+  }
 }
 
-.searchIcon {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #7e7665;
-  font-size: 1.25rem;
-}
-
-.searchInput {
-  width: 100%;
-  padding: 0.75rem 1rem 0.75rem 3rem;
-  background-color: #f5f3f0;
-  border: none;
-  border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.875rem;
-  outline: none;
-  transition: ring 0.2s;
-}
-
-.searchInput:focus {
-  box-shadow: 0 0 0 1px #c9a84c;
+/* Fix for the shared SearchFilter icon positioning */
+.searchFilterOverride :global(.material-symbols-outlined) {
+  position: absolute !important;
+  left: 1rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #7e7665 !important;
+  font-size: 1.25rem !important;
+  pointer-events: none;
+  z-index: 10;
 }
 
 .statusSelect {
@@ -90,7 +80,8 @@
   align-items: center;
   background-color: #f5f3f0;
   border-radius: 8px;
-  padding: 0.25rem;
+  padding: 0 0.5rem;
+  height: 45px;
 }
 
 .pageNavBtn {
@@ -325,4 +316,97 @@
   color: #1C1C1E;
   opacity: 0.5;
   font-size: 0.75rem;
+}
+
+/* --- Responsive Layout --- */
+
+/* Tablet & Large Mobile (up to 1024px) */
+@media (max-width: 1024px) {
+  .customerPageContent {
+    padding: 1rem 1.5rem;
+  }
+
+  .customerTable {
+    min-width: 900px; /* Keep all columns readable */
+  }
+
+  .tableScrollArea {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Mobile Portrait & Small Tablets (up to 768px) */
+@media (max-width: 768px) {
+  .customerPageContent {
+    padding: 1rem 1rem 2rem;
+    height: auto;
+    min-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  .searchContainer {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .statusSelect {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .topPagination {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tableWrapper {
+    height: auto;
+    flex: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .tableScrollArea {
+    max-height: 70vh;
+  }
+
+  .patronCell {
+    min-width: 280px;
+  }
+
+  .tableFooter {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .paginationControls {
+    width: 100%;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+}
+
+/* Very Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .paginationText {
+    font-size: 0.65rem;
+    padding: 0 0.5rem;
+  }
+
+  .patronName {
+    font-size: 1rem;
+  }
+
+  .patronContact {
+    font-size: 0.65rem;
+    white-space: normal;
+  }
+
+  .pageBtn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
 }

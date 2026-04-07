@@ -77,10 +77,6 @@ const Orders = () => {
     <div className={styles.container}>
       {/* Header Section */}
       <div className={styles.header}>
-        <div>
-          <h1 className={styles.pageTitle}>Order Management</h1>
-          <p className={styles.subtitle}>Reviewing the digital logs of the Silk Curator atelier.</p>
-        </div>
         <div className={styles.filterGroup}>
           {filters.map((filter) => (
             <button
@@ -154,26 +150,26 @@ const Orders = () => {
       </div>
 
       {/* Stats Grid */}
-      <div className={`${styles.statsGrid} row g-4`}>
-        <div className="col-12 col-md-3">
+      <div className={`${styles.statsGrid} row g-3 g-md-4`}>
+        <div className="col-12 col-sm-6 col-md-3">
           <div className={styles.statCard}>
             <p className={styles.statLabel}>Total Volume</p>
             <p className={styles.statValue}>$428,950.00</p>
           </div>
         </div>
-        <div className="col-12 col-md-3">
+        <div className="col-12 col-sm-6 col-md-3">
           <div className={styles.statCard}>
             <p className={styles.statLabel}>Pending Fulfillment</p>
             <p className={`${styles.statValue} ${styles.statPrimary}`}>18 Orders</p>
           </div>
         </div>
-        <div className="col-12 col-md-3">
+        <div className="col-12 col-sm-6 col-md-3">
           <div className={styles.statCard}>
             <p className={styles.statLabel}>Avg. Basket Value</p>
             <p className={styles.statValue}>$2,840.00</p>
           </div>
         </div>
-        <div className="col-12 col-md-3">
+        <div className="col-12 col-sm-6 col-md-3">
           <div className={`${styles.statCard} ${styles.statCardGrowth}`}>
             <p className={`${styles.statLabel} ${styles.statLabelGrowth}`}>Monthly Growth</p>
             <p className={`${styles.statValue} ${styles.statSecondary}`}>+12.4%</p>

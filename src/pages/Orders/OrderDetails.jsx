@@ -65,7 +65,7 @@ const OrderDetails = () => {
     <div className={styles.container}>
       {/* Hero Title Area - Now contains actions on the same line as the ID */}
       <div className={styles.heroSection}>
-        <div className="d-flex justify-content-between align-items-center mb-2">
+        <div className={`${styles.heroTitleArea} d-flex justify-content-between align-items-center mb-2`}>
           <h2 className={`${styles.orderId} mt-0 mb-0`}>Order #{orderInfo.id}</h2>
           <div className={styles.headerActions}>
             <button className={styles.btnConfirm}>Confirm Order</button>

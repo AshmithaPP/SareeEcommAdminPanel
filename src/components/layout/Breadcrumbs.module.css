@@ -1,6 +1,6 @@
 .breadcrumbContainer {
   width: 100%;
-  padding: 1.25rem 40px; /* Precise padding from mockup */
+  padding: 0.75rem 40px; /* Reduced vertical padding */
   background-color: var(--surface);
   border-bottom: 1px solid rgba(208, 197, 178, 0.03);
 }

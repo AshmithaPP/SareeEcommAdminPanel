@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import SearchFilter from '../../components/ui/SearchFilter';
 import styles from './CustomerList.module.css';
 
 const CustomerList = () => {
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
   const customers = [
     {
       id: 1,
@@ -62,26 +66,14 @@ const CustomerList = () => {
 
   return (
     <div className={styles.customerPageContent}>
-      {/* Page Header */}
-      <section className={styles.pageHeader}>
-        <h2 className={styles.pageTitle}>The Customer Archive</h2>
-        <p className={styles.pageSubtitle}>
-          Refined oversight of your global patrons. Manage individual preferences, acquisition histories, and engagement status with curatorial precision.
-        </p>
-      </section>
-
       {/* Filter & Control Bar */}
-      <section className={styles.filterBar}>
-        <div className={styles.searchContainer}>
-          <span className={`material-symbols-outlined ${styles.searchIcon}`}>search</span>
-          <input 
-            type="text" 
-            className={styles.searchInput} 
-            placeholder="Search patrons by name or email..." 
-          />
-        </div>
-        
-        <div className="d-flex gap-3 align-items-center">
+      <SearchFilter 
+        placeholder="Search patrons by name or email..."
+        searchValue={searchTerm}
+        onSearchChange={setSearchTerm}
+        className={styles.searchFilterOverride}
+      >
+        <div className="d-flex flex-column flex-md-row gap-2 gap-md-3 align-items-md-center align-items-start w-100 w-md-auto justify-content-md-end">
           <select className={styles.statusSelect}>
             <option>All Statuses</option>
             <option>Active</option>
@@ -98,7 +90,7 @@ const CustomerList = () => {
             </button>
           </div>
         </div>
-      </section>
+      </SearchFilter>
 
       {/* Table Canvas */}
       <section className={styles.tableWrapper}>
@@ -143,7 +135,7 @@ const CustomerList = () => {
                     </span>
                   </td>
                   <td className={`${styles.tableCell} text-end`}>
-                    <button className={styles.actionBtn}>View</button>
+                    <button className={styles.actionBtn} onClick={() => navigate(`/customers/${customer.id}`)}>View</button>
                   </td>
                 </tr>
               ))}

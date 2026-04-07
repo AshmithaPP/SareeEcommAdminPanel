@@ -7,7 +7,11 @@ const menuItems = [
   { name: 'Categories', icon: 'auto_awesome_motion',  path: '/categories' },
   { name: 'Orders',     icon: 'shopping_bag',         path: '/orders' },
   { name: 'Customers',  icon: 'group',                path: '/customers' },
-  { name: 'Analytics',  icon: 'insights',             path: '/analytics' },
+  { name: 'Payments',   icon: 'payments',             path: '/payments' },
+  { name: 'Inventory',  icon: 'inventory_2',          path: '/inventory' },
+  { name: 'Shipping', icon: 'local_shipping', path: '/shipping' },
+  { name: 'Coupons', icon: 'auto_awesome', path: '/marketing' },
+  { name: 'Admins', icon: 'admin_panel_settings', path: '/admins' },
 ];
 
 const Sidebar = ({ isCollapsed, isMobileOpen, setIsMobileOpen }) => {

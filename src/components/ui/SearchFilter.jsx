@@ -1,17 +1,29 @@
 import React from 'react';
-import { Search } from 'lucide-react';
 import styles from './SearchFilter.module.css';
 
-const SearchFilter = () => {
+const SearchFilter = ({ 
+  placeholder = "Search...", 
+  searchValue, 
+  onSearchChange, 
+  children,
+  label,
+  className
+}) => {
   return (
-    <div className={styles.filterSection}>
-      <div className={styles.searchWrapper}>
-        <Search size={18} className={styles.searchIcon} />
-        <input 
-          type="text" 
-          placeholder="Search product catalogue..." 
-          className={styles.searchInput}
-        />
+    <div className={`${styles.filterSection} ${className || ''}`}>
+      <div className={styles.searchContainer}>
+        <div className={styles.searchWrapper}>
+          <input 
+            type="text" 
+            placeholder={placeholder} 
+            className={styles.searchInput}
+            value={searchValue}
+            onChange={(e) => onSearchChange?.(e.target.value)}
+          />
+        </div>
+      </div>
+      <div className={styles.extraFilters}>
+        {children}
       </div>
     </div>
   );

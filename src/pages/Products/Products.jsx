@@ -137,10 +137,6 @@ const Products = () => {
 
       {/* ── Page Header ── */}
       <div className={styles.pageHeader}>
-        <div className={styles.pageHeaderLeft}>
-          <h1 className={styles.title}>Product Inventory</h1>
-          <p className={styles.subtitle}>Refining the heritage of handcrafted luxury silk.</p>
-        </div>
         <div className={styles.pageHeaderRight}>
           <span className={styles.statsText}>
             Displaying 1–12 of 48 Hand-Woven Masterpieces

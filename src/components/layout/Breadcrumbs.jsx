@@ -4,12 +4,16 @@ import styles from './Breadcrumbs.module.css';
 
 const routeMap = {
   '/dashboard': { parent: 'OVERVIEW', current: 'DASHBOARD' },
+  '/inventory': { parent: 'INVENTORY', current: 'MANAGEMENT' },
   '/products': { parent: 'INVENTORY', current: 'PRODUCTS' },
   '/products/add': { parent: 'INVENTORY', current: 'ADD PRODUCT' },
   '/products/edit': { parent: 'INVENTORY', current: 'EDIT PRODUCT' },
   '/categories': { parent: 'INVENTORY', current: 'CATEGORY & ATTRIBUTE MANAGEMENT' },
   '/orders': { parent: 'INVENTORY', current: 'ORDER MANAGEMENT' },
   '/customers': { parent: 'CUSTOMERS', current: 'LIST' },
+  '/payments': { parent: 'PAYMENTS', current: 'OVERVIEW' },
+  '/shipping': { parent: 'SHIPPING', current: 'SHIPPING & DELIVERY' },
+  '/admins': { parent: 'ADMINS', current: 'MANAGEMENT' },
 };
 
 const Breadcrumbs = () => {
@@ -19,6 +23,8 @@ const Breadcrumbs = () => {
   let pathData;
   if (location.pathname.startsWith('/orders/') && location.pathname !== '/orders') {
     pathData = { parent: 'INVENTORY', current: 'ORDER DETAILS' };
+  } else if (location.pathname.startsWith('/customers/') && location.pathname !== '/customers') {
+    pathData = { parent: 'CUSTOMERS', current: 'PROFILE' };
   } else {
     pathData = routeMap[location.pathname] || { parent: 'ADMIN', current: 'PANEL' };
   }

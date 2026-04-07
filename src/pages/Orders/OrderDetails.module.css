@@ -353,3 +353,122 @@
   letter-spacing: 0.2em;
   color: rgba(77, 70, 55, 0.4);
 }
+
+/* --- Responsive Layout --- */
+
+/* Tablet & Large Mobile (up to 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .itemsTableWrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .itemsTable {
+    min-width: 650px;
+  }
+
+  .itemsTable th:first-child, .itemsTable td:first-child {
+    min-width: 280px;
+  }
+}
+
+/* Mobile Portrait & Small Tablets (up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 1rem 2rem;
+    min-height: auto;
+  }
+
+  .heroSection {
+    margin-bottom: 2rem;
+  }
+
+  .heroTitleArea {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1.25rem;
+  }
+
+  .orderId {
+    font-size: 1.5rem;
+  }
+
+  .headerActions {
+    width: 100%;
+    margin-left: 0;
+    gap: 0.5rem;
+  }
+
+  .btnConfirm, .btnShipped {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .statusRow {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .bentoCard {
+    padding: 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.125rem;
+  }
+
+  .itemsTable td {
+    padding: 0.75rem 1rem;
+  }
+
+  .totalValue {
+    font-size: 1.25rem;
+  }
+
+  .timeline {
+    padding-left: 1.75rem;
+  }
+
+  .timelineMarker {
+    left: -1.75rem;
+  }
+}
+
+/* Very Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .headerActions {
+    flex-direction: column;
+  }
+
+  .btnConfirm, .btnShipped {
+    width: 100%;
+  }
+
+  .orderId {
+    font-size: 1.25rem;
+  }
+
+  .badgeInStock {
+    font-size: 8px;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .orderDate {
+    font-size: 0.7rem;
+  }
+
+  .bentoCard {
+    padding: 1rem;
+  }
+
+  .productCell p {
+    font-size: 0.8125rem;
+  }
+}
